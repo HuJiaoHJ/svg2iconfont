@@ -1,0 +1,28 @@
+{
+  "name": "svg2iconfont",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuJiaoHJ/svg2iconfont.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HuJiaoHJ/svg2iconfont/issues"
+  },
+  "homepage": "https://github.com/HuJiaoHJ/svg2iconfont#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-iconfont": "^10.0.1",
+    "gulp-iconfont-css": "^2.1.0"
+  },
+  "bin": {
+    "svg2iconfont": "./bin/svg2iconfont.js"
+  }
+}
