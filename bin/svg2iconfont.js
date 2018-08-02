@@ -22,7 +22,7 @@ const argv = require('yargs')
   })
   .option('t', {
     alias: 'type',
-    describe: 'css type: [css, less, scss]',
+    describe: 'css type: [css]',
     default: 'css',
     type: 'string',
   })
@@ -37,6 +37,10 @@ const type = argv.type;
 
 if (!inDir || !outDir) {
   throw new Error('options -i and -o can not empty');
+}
+
+if (type && type !== 'css') {
+  throw new Error('options -t must be "css"');
 }
 
 svg2iconfont(inDir, outDir, fontName, type);

@@ -8,7 +8,7 @@
 		url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
 }
 
-[class^="icon-<%= fontName %>-"], [class*=" icon-<%= fontName %>-"] {
+[class^="<%= cssClass %>"], [class*=" <%= cssClass %>"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: '<%= fontName %>' !important;
     speak: none;
@@ -24,7 +24,7 @@
 }
 
 <% _.each(glyphs, function(glyph) { %>
-.icon-<%= fontName %>-<%= glyph.fileName %>:before {
+.<%= cssClass %><%= glyph.fileName %>:before {
 	content: "\<%= glyph.codePoint %>";
 }
 <% }); %>

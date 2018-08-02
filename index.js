@@ -11,7 +11,7 @@ const path = require('path');
  * @param {string} inDir  // 传入的路径
  * @param {string} outDir // 输出的路径
  * @param {string} fontName // font name
- * @param {string} styleType   // 样式类型 css less scss 默认是css
+ * @param {string} styleType   // 样式类型 css
  */
 
 function svg2iconfont(inDir, outDir, fontName = 'iconfont', styleType = 'css') {
@@ -33,9 +33,14 @@ function svg2iconfont(inDir, outDir, fontName = 'iconfont', styleType = 'css') {
 }
 
 function iconfontCreate(inDir, outDir, fontName, styleType) {
+  let cssClass = 'icon-';
+  if (fontName !== 'iconfont') {
+    cssClass = `${fontName}-`
+  }
   gulp.src(`${inDir}*.svg`)
     .pipe(iconfontCss({
       fontName,
+      cssClass,
       path: path.join(__dirname, 'template', `icons.${styleType}`),
       targetPath: `${fontName}.${styleType}`,
       fontPath: '',
